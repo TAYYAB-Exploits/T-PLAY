@@ -8,7 +8,7 @@ function toggleAbout() {
 const apps = [
   {
     name: "Termux",
-    banner: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Termux.svg/1200px-Termux.svg.png",
+    banner: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Termux.svg",
     short: "Terminal emulator with Linux packages.",
     file: "app/termux.html"
   },
