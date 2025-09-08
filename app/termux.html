@@ -1,14 +1,69 @@
-<!--
-{
-  "name": "Termux",
-  "banner": "https://upload.wikimedia.org/.../termux_logo.png",
-  "short": "Terminal emulator with Linux packages.",
-  "category": "Hacking Tools"
-}
--->
+<!-- termux.html -->
 <div class="app-detail">
   <h2>Termux</h2>
-  <p>Full info: Termux is a terminal emulator with a powerful Linux environment...</p>
-  <img src="https://upload.wikimedia.org/.../screenshot.png" alt="Screenshot">
-  <a href="https://f-droid.org/repo/com.termux_1022.apk" class="download-btn">⬇️ Download APK</a>
+  <p>Termux is a powerful terminal emulator with Linux packages. Learn, hack, and explore right from your phone!</p>
+
+  <!-- YouTube section -->
+  <div class="youtube-section">
+    <h3>Check out our channel!</h3>
+    <button class="youtube-btn" onclick="openYouTube()">Tayyab ExploitZ</button>
+  </div>
+
+  <!-- Download section -->
+  <div class="download-section">
+    <button class="download-btn" onclick="downloadAPK()">⬇️ Download Termux APK</button>
+  </div>
+
+  <img src="https://upload.wikimedia.org/.../screenshot.png" alt="Termux Screenshot" class="app-screenshot">
 </div>
+
+<style>
+  .app-detail {
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+    font-family: sans-serif;
+  }
+  .app-screenshot {
+    width: 80%;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  .youtube-btn, .download-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .youtube-btn {
+    background: #FF0000;
+    color: white;
+  }
+  .youtube-btn:hover {
+    background: #cc0000;
+  }
+  .download-btn {
+    background: #4CAF50;
+    color: white;
+  }
+  .download-btn:hover {
+    background: #3e8e41;
+  }
+</style>
+
+<script>
+  function openYouTube() {
+    // Show a nice alert/info first (instead of direct link)
+    alert("Welcome to Tayyab ExploitZ! 🎉\nCheck out our tutorials, hacks, and more on our channel.");
+    window.open("https://www.youtube.com/@TayyabExploitZ", "_blank");
+  }
+
+  function downloadAPK() {
+    window.location.href = "https://f-droid.org/repo/com.termux_1022.apk";
+  }
+</script>
