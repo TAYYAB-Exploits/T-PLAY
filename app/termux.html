@@ -1,83 +1,185 @@
-<!-- termux.html -->
-<div class="app-detail">
-  <!-- Banner image -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Termux.svg/1200px-Termux.svg.png" alt="Termux Logo" class="app-banner">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termux - Apps Store Clone</title>
+<style>
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #202124;
+}
 
+/* Header */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+/* App Card */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 250px;
+  margin: 20px auto;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 120px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  transition: transform 0.25s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 80%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Buttons */
+.youtube-btn, .download-btn {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.youtube-btn {
+  background: #FF0000;
+  color: white;
+}
+
+.youtube-btn:hover {
+  background: #cc0000;
+}
+
+.download-btn {
+  background: #1a73e8;
+  color: white;
+}
+
+.download-btn:hover {
+  background: #1669c1;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Apps Store Clone</h1>
+</header>
+
+<!-- App Card -->
+<div class="card" onclick="openModal()">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Termux.svg/1200px-Termux.svg.png" alt="Termux Logo">
   <h2>Termux</h2>
-  <p>Termux is a powerful terminal emulator with Linux packages. Learn, hack, and explore right from your phone!</p>
-
-  <!-- YouTube section -->
-  <div class="youtube-section">
-    <h3>Check out our channel!</h3>
-    <button class="youtube-btn" onclick="openYouTube()">Tayyab ExploitZ</button>
-  </div>
-
-  <!-- Download section -->
-  <div class="download-section">
-    <button class="download-btn" onclick="downloadAPK()">⬇️ Download Termux APK</button>
-  </div>
-
-  <!-- Optional screenshot below -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Termux.svg/1200px-Termux.svg.png" alt="Termux Screenshot" class="app-screenshot">
+  <p>Terminal emulator with Linux packages. Learn, hack, and explore!</p>
 </div>
 
-<style>
-  .app-detail {
-    text-align: center;
-    max-width: 500px;
-    margin: auto;
-    font-family: sans-serif;
-  }
-
-  /* Banner image style */
-  .app-banner {
-    width: 100%;
-    max-height: 200px;
-    object-fit: contain;
-    border-radius: 12px;
-    margin-bottom: 20px;
-  }
-
-  .app-screenshot {
-    width: 80%;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-
-  .youtube-btn, .download-btn {
-    display: block;
-    margin: 10px auto;
-    padding: 15px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .youtube-btn {
-    background: #FF0000;
-    color: white;
-  }
-  .youtube-btn:hover {
-    background: #cc0000;
-  }
-  .download-btn {
-    background: #4CAF50;
-    color: white;
-  }
-  .download-btn:hover {
-    background: #3e8e41;
-  }
-</style>
+<!-- Modal -->
+<div class="modal" id="appModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Termux.svg/1200px-Termux.svg.png" alt="Termux Logo">
+    <h2>Termux</h2>
+    <p>Termux is a powerful terminal emulator with Linux packages. Hack, code, and explore directly from your phone.</p>
+    <div>
+      <button class="youtube-btn" onclick="openYouTube()">Visit YouTube Channel</button>
+      <button class="download-btn" onclick="downloadAPK()">⬇️ Download APK</button>
+    </div>
+  </div>
+</div>
 
 <script>
-  function openYouTube() {
-    alert("Welcome to Tayyab ExploitZ! 🎉\nCheck out our tutorials, hacks, and more on our channel.");
-    window.open("https://www.youtube.com/@TayyabExploitZ", "_blank");
-  }
+function openModal() {
+  document.getElementById("appModal").style.display = "flex";
+}
 
-  function downloadAPK() {
-    window.location.href = "https://f-droid.org/repo/com.termux_1022.apk";
+function closeModal() {
+  document.getElementById("appModal").style.display = "none";
+}
+
+function openYouTube() {
+  window.open("https://www.youtube.com/@TayyabExploitZ", "_blank");
+}
+
+function downloadAPK() {
+  window.location.href = "https://f-droid.org/repo/com.termux_1022.apk";
+}
+
+// Close modal on outside click
+window.onclick = function(event) {
+  const modal = document.getElementById("appModal");
+  if (event.target === modal) {
+    closeModal();
   }
+}
 </script>
+
+</body>
+</html>
