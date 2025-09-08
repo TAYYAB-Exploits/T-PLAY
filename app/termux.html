@@ -1,5 +1,8 @@
 <!-- termux.html -->
 <div class="app-detail">
+  <!-- Banner image -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Termux_logo.png" alt="Termux Logo" class="app-banner">
+
   <h2>Termux</h2>
   <p>Termux is a powerful terminal emulator with Linux packages. Learn, hack, and explore right from your phone!</p>
 
@@ -14,6 +17,7 @@
     <button class="download-btn" onclick="downloadAPK()">⬇️ Download Termux APK</button>
   </div>
 
+  <!-- Optional screenshot below -->
   <img src="https://upload.wikimedia.org/.../screenshot.png" alt="Termux Screenshot" class="app-screenshot">
 </div>
 
@@ -24,12 +28,23 @@
     margin: auto;
     font-family: sans-serif;
   }
+
+  /* Banner image style */
+  .app-banner {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
   .app-screenshot {
     width: 80%;
     margin: 20px 0;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
   }
+
   .youtube-btn, .download-btn {
     display: block;
     margin: 10px auto;
@@ -58,7 +73,6 @@
 
 <script>
   function openYouTube() {
-    // Show a nice alert/info first (instead of direct link)
     alert("Welcome to Tayyab ExploitZ! 🎉\nCheck out our tutorials, hacks, and more on our channel.");
     window.open("https://www.youtube.com/@TayyabExploitZ", "_blank");
   }
