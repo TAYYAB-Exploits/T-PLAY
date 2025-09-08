@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #111;
+  color: #eee;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #ff0080, #7928ca);
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.about {
+  text-align: center;
+  margin: 20px;
+}
+
+.about button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search {
+  text-align: center;
+  margin: 20px;
+}
+
+.search input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #222;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff0080;
+}
+
+.card img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.detail {
+  background: #222;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #00ff87, #60efff);
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}

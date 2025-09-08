@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-PLAY — Tayyab Play Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🔝 Banner -->
+  <header>
+    <h1>🌐 T-PLAY</h1>
+    <p>TAYYAB PLAY STORE</p>
+  </header>
+
+  <!-- ℹ️ About -->
+  <section class="about">
+    <button onclick="toggleAbout()">ℹ️ About Tayyab</button>
+    <div id="about-text" style="display:none;">
+      <p>👋 Hi, I’m <b>Tayyab</b>. This is my custom Play Store called <b>T-PLAY</b> where I share my favorite apps like Termux, Nethunter, Kali Linux and more!</p>
+    </div>
+  </section>
+
+  <!-- 🔍 Search -->
+  <section class="search">
+    <input type="text" id="searchBox" placeholder="🔍 Search apps..." onkeyup="searchApps()">
+  </section>
+
+  <!-- 📦 App Grid -->
+  <section id="app-grid" class="grid">
+    <!-- Cards JS se load honge -->
+  </section>
+
+  <!-- 📄 App Detail -->
+  <section id="app-detail" class="detail" style="display:none;">
+    <!-- JS se load hoga -->
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
